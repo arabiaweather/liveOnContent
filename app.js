@@ -3,7 +3,7 @@ var clone = require('node-v8-clone').clone;
 var memArray = [];
 var genListArr = {};
 
-setInterval(procList, 100*60*5);
+setInterval(procList, 1000*60*5);
 
 function respond(req, res, next) {
   res.send('hello ' + req.params.name);
