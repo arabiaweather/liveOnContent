@@ -99,6 +99,7 @@ function genList()
 function getTopList(req, res, next)
 {
 //console.log(JSON.stringify(genListArr));
+
 	res.send(JSON.parse(JSON.stringify(genListArr))); 
 	res.end();
 }
@@ -111,7 +112,11 @@ server.head('/hello/:name', respond);
 server.get('/at/:url/:title/:img/:domain/:nodeid', addView);
 server.get('top/:domain', getTopList);
 
-server.listen(888, function() {
+server.use(restify.CORS());
+server.use(restify.fullResponse());
+server.use(restify.bodyParser()); // mapped in req.params
+
+server.listen(8099, function() {
   console.log('%s listening at %s', server.name, server.url);
 });
 
