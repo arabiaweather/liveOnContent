@@ -3,11 +3,7 @@ var clone = require('node-v8-clone').clone;
 var memArray = [];
 var genListArr = {};
 
-setInterval(procList, 1000*60*5);
-
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
-}
+setInterval(procList, 100*60*5);
 
 function addView(req, res, next)
 {
@@ -16,7 +12,7 @@ function addView(req, res, next)
 	newVisitArray["url"] = req.params.url;
 	newVisitArray["title"]=req.params.title;
 	newVisitArray["img"]=req.params.img;
-	newVisitArray["domain"]=req.params.domain;
+	newVisitArray["domain"]=req.params.domain.toLowerCase();
 	newVisitArray["nodeid"]=req.params.nodeid;
 	newVisitArray["expired"]=0; 
 	memArray.push(newVisitArray);
@@ -98,9 +94,15 @@ function genList()
 
 function getTopList(req, res, next)
 {
-//console.log(JSON.stringify(genListArr));
-
-	res.send(JSON.parse(JSON.stringify(genListArr))); 
+	var domain = req.params.domain.toLowerCase();
+	if(domain in genListArr)
+	{
+		res.send(JSON.parse(JSON.stringify(genListArr[domain]))); 
+	}
+	else
+	{	
+		res.send("{}");
+	}
 	res.end();
 }
 

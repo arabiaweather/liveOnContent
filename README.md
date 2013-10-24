@@ -42,6 +42,6 @@ Response Looks Like
 }
 ------------------------------------------------------------
 TODO: Sort the JSON Articles per domain by number of views 
-TODO: Set domain to lowercase to avoid duplication from capitlization
-TODO: Enable Retrive by domain 
+DONE: Set domain to lowercase to avoid duplication from capitlization
+DONE: Enable Retrive by domain 
  
