@@ -1,0 +1,21 @@
+{
+  "name": "liveOnContent",
+  "description": "Allows the count and retrieval on realtime visited articles ",
+  "version": "0.5",
+  "maintainers": [
+    {
+      "name": "Yousef Wadi",
+      "email": "yousef@arabiaweather.com",
+      "web": "www.arabiaweather.com"
+    }
+  ],
+  "dependencies": {
+    "node-v8-clone": "0.4.5"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/arabiaweather/liveOnContent.git"
+    }
+  ]
+}
