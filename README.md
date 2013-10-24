@@ -12,6 +12,7 @@ To contribute to the project please contact ywadi@arabiaweather.com
 The server that hosts this project requires a good set of dedicated RAM, since the project needs to be fast and realtime all the generated data will be stored on the RAM, once required it is also retived from RAM. 
 
 ----------------------------------------------------------------------
+
 When posting a view count you would noramlly use REST GET
 http://[SERVER-DOMAIN]:8099/at/[PAGE-URL]/[PAGE-TITLE]/[PAGE-IMAGE-PATH]/[DOMAIN-OF-ARTICLE]/[CONTENT-Unique-ID]
 
@@ -40,8 +41,12 @@ Response Looks Like
     }
   }
 }
+
 ------------------------------------------------------------
-TODO: Sort the JSON Articles per domain by number of views 
-DONE: Set domain to lowercase to avoid duplication from capitlization
-DONE: Enable Retrive by domain 
+
+TODO: Sort the JSON Articles per domain by number of views
+
+TODO: Set domain to lowercase to avoid duplication from capitlization
+
+TODO: Enable Retrive by domain 
  
