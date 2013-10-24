@@ -107,14 +107,13 @@ function getTopList(req, res, next)
 
 
 var server = restify.createServer();
-server.get('/hello/:name', respond);
-server.head('/hello/:name', respond);
+server.use(restify.CORS({origins: ['*'] }));
+server.use(restify.fullResponse());
+server.use(restify.bodyParser()); // mapped in req.params
+
 server.get('/at/:url/:title/:img/:domain/:nodeid', addView);
 server.get('top/:domain', getTopList);
 
-server.use(restify.CORS());
-server.use(restify.fullResponse());
-server.use(restify.bodyParser()); // mapped in req.params
 
 server.listen(8099, function() {
   console.log('%s listening at %s', server.name, server.url);
