@@ -8,7 +8,9 @@ The project is currently in alpha is is still being developed and tested. The pr
 To contribute to the project please contact ywadi@arabiaweather.com 
 
 ----------------------------------------------------------------------
+
 The server that hosts this project requires a good set of dedicated RAM, since the project needs to be fast and realtime all the generated data will be stored on the RAM, once required it is also retived from RAM. 
+
 ----------------------------------------------------------------------
 When posting a view count you would noramlly use REST GET
 http://[SERVER-DOMAIN]:8099/at/[PAGE-URL]/[PAGE-TITLE]/[PAGE-IMAGE-PATH]/[DOMAIN-OF-ARTICLE]/[CONTENT-Unique-ID]
@@ -20,6 +22,7 @@ Domain-Of-Article: To handle multiple domains and subdomains, you can push a dom
 Content-Unique-ID: This is a unique identifier where the view counts are done 
 
 ----------------------------------------------------------------------
+
 To Retrive the most viewed content within a 5 minute window you would use GET 
 http://[SERVER-DOMAIN]:8099/top/[Domain-Of-Article]
 
