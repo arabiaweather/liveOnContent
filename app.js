@@ -1,12 +1,13 @@
 var restify = require('restify');
 var clone = require('node-v8-clone').clone;
 var memArray = [];
-var genListArr = {};
+var genListArr = [];
 
-setInterval(procList, 100*60*5);
+setInterval(procList, 100*60*1);
 
 function addView(req, res, next)
 {
+console.log(".");
 	//Add new view to array
 	var newVisitArray = [];
 	newVisitArray["url"] = req.params.url;
@@ -49,7 +50,7 @@ function procList()
 
 function genList()
 {
-	genListArr = {};
+	genListArr = [];
 	var memClone = clone(memArray,true);
 	var resList = {};
 	for(var i =0; i<memClone.length; i++) 
@@ -89,11 +90,28 @@ function genList()
 			
 		}
 	}
-	genListArr = clone(resList, true);
+	var sorted = [];
+	for(domainItem in resList) 
+	{
+		sorted[domainItem] = [];
+		for(item in resList[domainItem])
+		{
+			sorted[domainItem].push(resList[domainItem][item]);
+		}
+		//Do the sort for last added Domain 
+		sorted[domainItem].sort(
+			function(a,b)
+			{
+				return b.count - a.count; 
+			}
+		);		
+	}	
+	genListArr = clone(sorted, true);
 }
 
 function getTopList(req, res, next)
 {
+
 	var domain = req.params.domain.toLowerCase();
 	if(domain in genListArr)
 	{
