@@ -1,0 +1,14 @@
+{
+  "name": "LiveOnContent",
+  "version": "0.0.1",
+  "description": "Server that counts visits on a website, and retrives the most viewed content within 5 minute window.",
+  "keywords": [],
+  "author": "Yousef Wadi <yousef@arabiaweather.com>",
+  "repository": { "type": "git", "url": "git://github.com/arabiaweather/LiveOnContent.git" },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index"
+}
